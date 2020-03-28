@@ -5,7 +5,8 @@ use Illuminate\Http\Request;
 use Covid\Groups\Application\Groups;
 
 Route::get('/', function (Request $request) {
-    return view('home');
+    return view('soon');
+    // return view('home');
 })->name('home');
 
 Route::get('/groups', function (Request $request, Groups $groups) {
