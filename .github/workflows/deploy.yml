@@ -51,7 +51,7 @@ jobs:
     
     - name: Remove dev dependencies
       run: |
-        php artisan config:clear
+        /bin/rm bootstrap/cache/*
         composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --no-dev --prefer-dist --optimize-autoloader
         php artisan config:clear
     

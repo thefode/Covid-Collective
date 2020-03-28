@@ -23,6 +23,7 @@ functions:
             -   http: 'ANY /'
             -   http: 'ANY /{proxy+}'
         environment:
+            APP_URL: https://covid-collective.co.uk
             APP_KEY: ${env:APP_KEY}
             DB_HOST: ${env:DB_HOST}
             DB_DATABASE: ${env:DB_DATABASE}
@@ -30,7 +31,7 @@ functions:
             DB_PASSWORD: ${env:DB_PASSWORD}
             APP_STORAGE: '/tmp'
             LOG_CHANNEL: 'stderr'
-            VIEW_COMPILED_PATH: /tmp/storage/framework/views
+            VIEW_COMPILED_PATH: '/tmp/storage/framework/views'
 
     artisan:
         handler: artisan
@@ -38,6 +39,7 @@ functions:
             - ${bref:layer.php-74}
             - ${bref:layer.console}
         environment:
+            APP_URL: https://covid-collective.co.uk
             APP_KEY: ${env:APP_KEY}
             DB_HOST: ${env:DB_HOST}
             DB_DATABASE: ${env:DB_DATABASE}
@@ -45,7 +47,7 @@ functions:
             DB_PASSWORD: ${env:DB_PASSWORD}
             APP_STORAGE: '/tmp'
             LOG_CHANNEL: 'stderr'
-            VIEW_COMPILED_PATH: /tmp/storage/framework/views
+            VIEW_COMPILED_PATH: '/tmp/storage/framework/views'
         events:
             # - schedule:
             #     rate: rate(5 minutes)
