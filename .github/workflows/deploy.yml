@@ -53,6 +53,7 @@ jobs:
       run: |
         php artisan config:clear
         composer install --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --no-dev --prefer-dist --optimize-autoloader
+        php artisan config:clear
     
     - name: Build assets
       run: |

@@ -58,6 +58,7 @@ package:
         - ./storage/logs/**
         - ./storage/framework/**
         - ./tests/**
+        - ./cache/**
 
 resources:
     Resources:
