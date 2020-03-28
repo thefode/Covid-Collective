@@ -62,7 +62,7 @@ resources:
         Assets:
             Type: AWS::S3::Bucket
             Properties:
-                BucketName: personalised-horoscopes
+                BucketName: covid-collective-assets
                 CorsConfiguration:
                     CorsRules:
                         -   AllowedHeaders: ["*"]
