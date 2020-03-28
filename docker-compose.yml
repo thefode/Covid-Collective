@@ -1,0 +1,35 @@
+version: "3.5"
+
+services:
+    web:
+        image: bref/fpm-dev-gateway
+        ports:
+            - '8000:80'
+        volumes:
+            - .:/var/task
+        depends_on:
+            - php
+        environment:
+            HANDLER: public/index.php
+            APP_STORAGE: '/tmp'
+            DOCUMENT_ROOT: public
+    php:
+        image: bref/php-74-fpm-dev
+        volumes:
+            - .:/var/task
+            # - ./logs:/var/task/storage/logs
+            - ./storage/logs:/var/task/storage/logs
+            # - ./cache:/var/task/bootstrap/cache
+            # - ./cache:/var/task/storage
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            MYSQL_DATABASE: trails
+            MYSQL_USER: trails
+            MYSQL_PASSWORD: trails
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - "33060:3306"
+        volumes:
+            - ./storage/mysql:/var/lib/mysql

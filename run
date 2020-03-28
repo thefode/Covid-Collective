@@ -1,0 +1,107 @@
+#!/bin/bash
+
+RUN="$1"
+OPTION="$2"
+ALL="$@"
+OPTIONS="$(echo $ALL | sed "s/^$RUN//g")"
+
+if [ $RUN = 'rebuild' ];
+then
+    start=`date +%s`
+
+    echo 'Rebuilding everything'
+    
+    docker-compose stop
+    docker-compose down
+    docker-compose rm -f
+    docker system prune -f
+    docker-compose build
+    docker-compose up -d
+
+    run art migrate:refresh --seed
+    
+    end=`date +%s`
+
+    runtime=$((end-start))
+    echo "Total time: ${runtime}s"
+
+elif [ $RUN = 'stop' ];
+then
+
+    docker-compose stop
+    docker-compose down
+
+elif [ $RUN = 'up' ];
+then
+
+    docker-compose up -d
+
+elif [ $RUN = 'bash' ];
+then
+
+    docker-compose exec php bash
+
+elif [ $RUN = 'art' ];
+then
+
+    docker-compose exec php php artisan $OPTIONS
+
+elif [ $RUN = 'test' ];
+then
+
+    docker-compose exec php php artisan test
+
+elif [ $RUN = 'tink' ];
+then
+
+    docker-compose exec php php artisan tinker
+
+elif [ $RUN = 'composer' ];
+then
+
+    docker-compose run composer $OPTIONS
+
+elif [ $RUN = 'tests' ];
+then
+
+    echo 'Running tests'
+    docker-compose exec php ./vendor/bin/phpunit --columns max $OPTIONS
+    # ./vendor/bin/phpunit --columns max $OPTIONS
+
+elif [ $RUN = 'coverage' ];
+then
+
+    echo 'Running tests with code coverage'
+    docker-compose exec php ./vendor/bin/phpunit --columns max --coverage-html=coverage
+    open file:///$PWD/API/coverage/Auth/index.html
+
+elif [ $RUN = 'cs' ];
+then
+
+    echo 'Running CodeSniffer'
+    docker-compose exec php ./vendor/bin/phpcs
+
+elif [ $RUN = 'csf' ];
+then
+
+    echo 'Running CodeSniffer'
+    docker-compose exec php ./vendor/bin/phpcbf
+
+elif [ $RUN = 'deploy' ];
+then
+
+    docker-compose run composer install --optimize-autoloader --no-dev
+    serverless deploy
+
+else
+
+    echo "Unknown run: '${RUN}'"
+
+fi
+
+
+
+echo 'Done'
+
+
+
