@@ -20,7 +20,7 @@
 
     <div class="container text-center h-100">
         <div class="row h-100">
-            <div class="col-sm h-100" style="padding-top: 40%;">
+            <div class="col-sm h-100" style="padding-top: 30%;">
 
                 <h1>Covid Collective</h1>
 
