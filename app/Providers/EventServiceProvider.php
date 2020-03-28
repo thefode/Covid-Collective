@@ -2,10 +2,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Covid\Shared\EventDispatcher;
+use Covid\Shared\EventBus;
 use Broadway\EventHandling\SimpleEventBus;
 use Broadway\EventDispatcher\CallableEventDispatcher;
-use Boundless\Shared\EventDispatcher;
-use Boundless\Shared\EventBus;
 
 class EventServiceProvider extends ServiceProvider
 {

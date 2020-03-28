@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Boundless\Shared\EventStore;
-use Boundless\EventSourcing\RelationalEventStore;
-use Boundless\EventSourcing\InMemoryEventStore;
+use Covid\Shared\EventStore;
+use Covid\EventSourcing\RelationalEventStore;
+use Covid\EventSourcing\InMemoryEventStore;
 
 class EventStoreServiceProvider extends ServiceProvider
 {
