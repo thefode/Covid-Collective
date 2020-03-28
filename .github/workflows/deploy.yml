@@ -40,6 +40,7 @@ jobs:
         php artisan migrate:refresh --seed
         ./vendor/bin/phpunit
       env:
+        APP_ENV: testing
         DB_DATABASE: test
         DB_USERNAME: root
     
