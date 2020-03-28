@@ -30,6 +30,7 @@ functions:
             DB_PASSWORD: ${env:DB_PASSWORD}
             APP_STORAGE: '/tmp'
             LOG_CHANNEL: 'stderr'
+            VIEW_COMPILED_PATH: /tmp/storage/framework/views
 
     artisan:
         handler: artisan
