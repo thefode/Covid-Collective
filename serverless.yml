@@ -83,7 +83,6 @@ resources:
             Properties:
                 DistributionConfig:
                     Aliases:
-                        - '*.covid-collective.co.uk'
                         - 'covid-collective.co.uk'
                     ViewerCertificate:
                         AcmCertificateArn: arn:aws:acm:us-east-1:226724292713:certificate/5fcacd0c-d938-4221-9be7-f4fa34545c3d
