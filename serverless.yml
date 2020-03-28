@@ -45,6 +45,7 @@ functions:
             DB_PASSWORD: ${env:DB_PASSWORD}
             APP_STORAGE: '/tmp'
             LOG_CHANNEL: 'stderr'
+            VIEW_COMPILED_PATH: /tmp/storage/framework/views
         events:
             # - schedule:
             #     rate: rate(5 minutes)
@@ -52,11 +53,11 @@ functions:
 
 package:
     exclude:
+        - ./node_modules/**
         - ./storage/mysql/**
         - ./storage/logs/**
         - ./storage/framework/**
         - ./tests/**
-
 
 resources:
     Resources:
