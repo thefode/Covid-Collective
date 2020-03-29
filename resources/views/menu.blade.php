@@ -12,15 +12,23 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            
             <li class="nav-item @if($current === 'home') active @endif">
                 <a class="nav-link" href="{{ route('home', null, false) }}">Home</a>
             </li>
+
             <li class="nav-item @if($current === 'groups') active @endif">
                 <a class="nav-link" href="{{ route('groups', null, false) }}">Groups</a>
             </li>
+
+            <li class="nav-item @if($current === 'resources') active @endif">
+                <a class="nav-link" href="{{ route('resources', null, false) }}">Resources</a>
+            </li>
+
             <li class="nav-item @if($current === 'other') active @endif">
                 <a class="nav-link" href="{{ route('other', null, false) }}">Other</a>
             </li>
+
             {{-- 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

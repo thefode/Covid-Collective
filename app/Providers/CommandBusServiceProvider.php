@@ -2,8 +2,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Covid\Shared\CommandBus;
 use Broadway\CommandHandling\SimpleCommandBus;
-use Boundless\Shared\CommandBus;
 
 class CommandBusServiceProvider extends ServiceProvider
 {

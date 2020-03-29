@@ -12,8 +12,8 @@
             <directory suffix="Test.php">./tests/Endpoints</directory>
         </testsuite>
 
-        <testsuite name="Boundless">
-            <directory suffix="Test.php">./Boundless/**/*</directory>
+        <testsuite name="Covid">
+            <directory suffix="Test.php">./Covid/**/*</directory>
         </testsuite>
     </testsuites>
     <filter>

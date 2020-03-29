@@ -178,6 +178,8 @@ return [
         App\Providers\EventStoreServiceProvider::class,
         App\Providers\CommandBusServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+
+        Covid\Resources\Framework\ResourcesServiceProvider::class
     ],
 
     /*

@@ -2,6 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Covid\Shared\CommandBus;
+use Covid\Resources\Domain\Url;
+use Covid\Resources\Domain\Title;
+use Covid\Resources\Domain\ResourceId;
+use Covid\Resources\Domain\Media;
+use Covid\Resources\Domain\Description;
+use Covid\Resources\Domain\Cost;
+use Covid\Resources\Domain\Category;
+use Covid\Resources\Domain\Audience;
+use Covid\Resources\Application\Query\ResourcesQuery;
+use Covid\Resources\Application\Commands\CreateResource;
 use Covid\Groups\Application\Groups;
 
 Route::get('/', function (Request $request) {
@@ -9,17 +20,78 @@ Route::get('/', function (Request $request) {
     // return view('home');
 })->name('home');
 
+/*
+ *  Resources
+ */
+
+Route::get('/resources', function (Request $request, ResourcesQuery $resources) {
+    return view('resources', [
+        'resources' => $resources->getResources()
+    ]);
+})->name('resources');
+
+Route::post('/resources/add', function (Request $request, CommandBus $bus) {
+    $validator = Validator::make($request->all(), [
+        'title' => 'required',
+        'description' => 'required',
+        'url' => 'required',
+        'audience' => 'required',
+        'category' => 'required',
+        'cost' => 'required',
+        'media' => 'required',
+    ]);
+    
+    $data = $request->all();
+    if ($validator->fails()) {
+        $data['error'] = implode('<br>', $validator->errors()->all());
+        
+    } else {
+
+        try {
+
+            $command = new CreateResource(
+                ResourceId::new(),
+                new Title($request->get('title')),
+                new Description($request->get('description')),
+                new Url($request->get('url')),
+                new Audience($request->get('audience')),
+                new Category($request->get('category')),
+                new Cost($request->get('cost')),
+                new Media($request->get('media')),
+                new DateTimeImmutable()
+            );
+            
+            $bus->dispatch($command);
+            $data = [
+                'success' => 'Resource saved'
+            ];
+            
+        } catch (\Throwable $e) {
+            $data = $request->all();
+            $data['error'] = $e->getMessage();
+        }
+    }
+    
+    return view('addResource', $data);
+})->name('addResource');
+
+Route::get('/resources/add', function (Request $request) {
+    return view('addResource', $request->all());
+})->name('addResource');
+
+/*
+ *  Groups
+ */
+
 Route::get('/groups', function (Request $request, Groups $groups) {
     return view('groups', [
         'groups' => $groups->getGroups()
     ]);
 })->name('groups');
 
-Route::get('/resources', function (Request $request) {
-    return view('resources', [
-        //
-    ]);
-})->name('resources');
+/*
+ *  Other
+ */
 
 Route::get('/other', function (Request $request) {
     return view('other');
