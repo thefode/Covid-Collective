@@ -15,22 +15,23 @@
                     @php
                         $filters = [
                             'Category' => [
-                                'Fitness',
-                                'Mental heath',
-                                'Teaching',
-                                'Social',
                                 'Entertainment',
-                                'Information',
                                 'Finance',
-                                'Support',
+                                'Fitness',
+                                'Information',
+                                'Mental heath',
                                 'News',
+                                'Social',
+                                'Support',
+                                'Teaching',
                             ],
                             'Audience' => [
-                                'Kids',
-                                'Parents',
-                                'LGBT',
-                                'Vulnerable',
+                                'Anyone',
                                 'Business',
+                                'Kids',
+                                'LGBT',
+                                'Parents',
+                                'Vulnerable',
                             ],
                             'Cost' => [
                                 'Free',
@@ -38,11 +39,11 @@
                                 'Paid',
                             ],
                             'Media' => [
-                                'Website',
-                                'Video',
                                 'Audio',
-                                'Reading',
                                 'Social Media',
+                                'Text',
+                                'Video',
+                                'Website',
                             ]
                         ]
                     @endphp

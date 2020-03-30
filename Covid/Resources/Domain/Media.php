@@ -7,11 +7,11 @@ final class Media extends AttributeWithOptions
     protected function getPossibleOptions(): array
     {
         return [
-            'Website',
-            'Video',
             'Audio',
-            'Reading',
             'Social Media',
+            'Text',
+            'Video',
+            'Website',
         ];
     }
 

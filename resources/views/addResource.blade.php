@@ -43,11 +43,12 @@
             <div class="col-sm-10">
                 <select class="form-control" id="audience" name="audience">
                     <option></option>
-                    <option @if($audience ?? null == 'Kids')selected @endif>Kids</option>
-                    <option @if($audience ?? null == 'Parents')selected @endif>Parents</option>
-                    <option @if($audience ?? null == 'LGBT')selected @endif>LGBT</option>
-                    <option @if($audience ?? null == 'Vulnerable')selected @endif>Vulnerable</option>
+                    <option @if($audience ?? null == 'Anyone')selected @endif>Anyone</option>
                     <option @if($audience ?? null == 'Business')selected @endif>Business</option>
+                    <option @if($audience ?? null == 'Kids')selected @endif>Kids</option>
+                    <option @if($audience ?? null == 'LGBT')selected @endif>LGBT</option>
+                    <option @if($audience ?? null == 'Parents')selected @endif>Parents</option>
+                    <option @if($audience ?? null == 'Vulnerable')selected @endif>Vulnerable</option>
                 </select>
             </div>
         </div>
@@ -57,15 +58,15 @@
             <div class="col-sm-10">
                 <select class="form-control" id="category" name="category">
                     <option></option>
-                    <option @if($category ?? null == 'Fitness')selected @endif>Fitness</option>
-                    <option @if($category ?? null == 'Mental heath')selected @endif>Mental heath</option>
-                    <option @if($category ?? null == 'Teaching')selected @endif>Teaching</option>
-                    <option @if($category ?? null == 'Social')selected @endif>Social</option>
                     <option @if($category ?? null == 'Entertainment')selected @endif>Entertainment</option>
-                    <option @if($category ?? null == 'Information')selected @endif>Information</option>
                     <option @if($category ?? null == 'Finance')selected @endif>Finance</option>
-                    <option @if($category ?? null == 'Support')selected @endif>Support</option>
+                    <option @if($category ?? null == 'Fitness')selected @endif>Fitness</option>
+                    <option @if($category ?? null == 'Information')selected @endif>Information</option>
+                    <option @if($category ?? null == 'Mental heath')selected @endif>Mental heath</option>
                     <option @if($category ?? null == 'News')selected @endif>News</option>
+                    <option @if($category ?? null == 'Social')selected @endif>Social</option>
+                    <option @if($category ?? null == 'Support')selected @endif>Support</option>
+                    <option @if($category ?? null == 'Teaching')selected @endif>Teaching</option>
                 </select>
             </div>
         </div>
@@ -87,11 +88,11 @@
             <div class="col-sm-10">
                 <select class="form-control" id="media" name="media">
                     <option></option>
-                    <option @if($media ?? null == 'Website')selected @endif>Website</option>
-                    <option @if($media ?? null == 'Video')selected @endif>Video</option>
                     <option @if($media ?? null == 'Audio')selected @endif>Audio</option>
-                    <option @if($media ?? null == 'Reading')selected @endif>Reading</option>
                     <option @if($media ?? null == 'Social Media')selected @endif>Social Media</option>
+                    <option @if($media ?? null == 'Text')selected @endif>Text</option>
+                    <option @if($media ?? null == 'Video')selected @endif>Video</option>
+                    <option @if($media ?? null == 'Website')selected @endif>Website</option>
                 </select>
             </div>
         </div>
