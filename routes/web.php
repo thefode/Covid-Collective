@@ -26,7 +26,8 @@ Route::get('/', function (Request $request) {
 
 Route::get('/resources', function (Request $request, ResourcesQuery $resources) {
     return view('resources', [
-        'resources' => $resources->getResources()
+        'resources' => $resources->getResources($request->all()),
+        'selected' => $request->all()
     ]);
 })->name('resources');
 

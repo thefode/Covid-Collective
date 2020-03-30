@@ -15,9 +15,25 @@ class ResourcesQuery
         $this->db = $db;
     }
 
-    public function getResources()
+    public function getResources(array $filter)
     {
-        $result = $this->db->table('resources')->get();
+        $query = $this->db->table('resources');
+
+        foreach ($filter as $field => $options) {
+            $field = strtolower($field);
+            if (!in_array($field, ['category', 'audience', 'cost', 'media'])) {
+                continue;
+            }
+            
+            $options = array_filter($options, fn($val) => is_string($val) && strlen($val) < 20);
+            if (count($options) == 0) {
+                continue;
+            }
+
+            $query->whereIn($field, $options);
+        }
+        
+        $result = $query->get();
 
         if (!$result) {
             throw new ResourceNotFound();
