@@ -7,7 +7,7 @@ final class Audience extends AttributeWithOptions
     protected function getPossibleOptions(): array
     {
         return [
-            'Anyone'
+            'Anyone',
             'Kids',
             'Parents',
             'LGBT',
