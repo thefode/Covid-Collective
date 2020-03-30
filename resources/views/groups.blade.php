@@ -4,7 +4,7 @@
 
     <p>Find your local support group, kindly maintained by <a href="https://covidmutualaid.org/">covidmutualaid.org</a>.</p>
 
-    <iframe src="https://covidmutualaid.cc/" frameborder="0" width="100%" height="100%" title="Covid-19 Mutual Aid Groups"
+    <iframe src="https://covidmutualaid.cc/" frameborder="0" width="100%" height="100%" class="min-vh-100" title="Covid-19 Mutual Aid Groups"
         aria-label="United Kingdom local authority districts (2018) Symbol map" scrolling="no" style="border: none;"
         frameborder="0">
     </iframe>
