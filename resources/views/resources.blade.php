@@ -94,7 +94,9 @@
                     <div class="card-body">
                         <h5 class="card-title">
                             <strong>
-                                {{$resource->title}}
+                                <a href="{{$resource->url}}" style="color: inherit;" class="stretched-link">
+                                    {{$resource->title}}
+                                </a>
                             </strong>
                         </h5>
                         <p class="card-subtitle mb-2 row text-muted" style="font-size: 1em;">
