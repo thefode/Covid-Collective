@@ -21,6 +21,7 @@
                                 'Information',
                                 'Mental heath',
                                 'News',
+                                'Research',
                                 'Social',
                                 'Support',
                                 'Teaching',

@@ -64,6 +64,7 @@
                     <option @if($category ?? null == 'Information')selected @endif>Information</option>
                     <option @if($category ?? null == 'Mental heath')selected @endif>Mental heath</option>
                     <option @if($category ?? null == 'News')selected @endif>News</option>
+                    <option @if($category ?? null == 'Research')selected @endif>Research</option>
                     <option @if($category ?? null == 'Social')selected @endif>Social</option>
                     <option @if($category ?? null == 'Support')selected @endif>Support</option>
                     <option @if($category ?? null == 'Teaching')selected @endif>Teaching</option>

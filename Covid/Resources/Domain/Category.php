@@ -7,15 +7,16 @@ final class Category extends AttributeWithOptions
     protected function getPossibleOptions(): array
     {
         return [
-            'Fitness',
-            'Mental heath',
-            'Teaching',
-            'Social',
             'Entertainment',
-            'Information',
             'Finance',
-            'Support',
+            'Fitness',
+            'Information',
+            'Mental heath',
             'News',
+            'Research',
+            'Social',
+            'Support',
+            'Teaching',
         ];
     }
 
