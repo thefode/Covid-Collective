@@ -87,8 +87,8 @@ class AttributeTest extends TestCase
 
     public function test_url()
     {
-        $url = new Url('https://covid-collective.co.uk');
+        $url = new Url('https://covid-collective.co.uk:443?utm_thing=something');
 
-        $this->assertEquals('https://covid-collective.co.uk', (string)$url);
+        $this->assertEquals('https://covid-collective.co.uk/', (string)$url);
     }
 }

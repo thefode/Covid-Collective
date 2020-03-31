@@ -39,7 +39,9 @@ final class Url extends AttributeWithFilter
         ksort($keep);
         $parts['query'] = http_build_query($keep);
 
-        return $this->unparseUrl($parts);
+        $combined = $this->unparseUrl($parts);
+
+        return rtrim($combined, '?');
     }
 
     private function unparseUrl(array $parsed_url): string
