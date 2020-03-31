@@ -39,6 +39,7 @@
                                 'Paid',
                             ],
                             'Media' => [
+                                'App',
                                 'Audio',
                                 'Social Media',
                                 'Text',

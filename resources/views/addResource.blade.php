@@ -88,6 +88,7 @@
             <div class="col-sm-10">
                 <select class="form-control" id="media" name="media">
                     <option></option>
+                    <option @if($media ?? null == 'App')selected @endif>App</option>
                     <option @if($media ?? null == 'Audio')selected @endif>Audio</option>
                     <option @if($media ?? null == 'Social Media')selected @endif>Social Media</option>
                     <option @if($media ?? null == 'Text')selected @endif>Text</option>
