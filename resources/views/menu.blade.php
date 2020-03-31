@@ -14,19 +14,19 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item mr-lg-3 @if($current === 'home') active @endif">
-                <a class="nav-link" href="{{ route('home', null, false) }}">Home</a>
+                <a class="nav-link" href="{{ route('home') }}">Home</a>
             </li>
             
             <li class="nav-item mr-lg-3 @if($current === 'groups') active @endif">
-                <a class="nav-link" href="{{ route('groups', null, false) }}">Support Groups</a>
+                <a class="nav-link" href="{{ route('groups') }}">Support Groups</a>
             </li>
             
             <li class="nav-item mr-lg-3 @if($current === 'resources') active @endif">
-                <a class="nav-link" href="{{ route('resources', null, false) }}">Resources</a>
+                <a class="nav-link" href="{{ route('resources') }}">Resources</a>
             </li>
             
             <li class="nav-item mr-lg-3 @if($current === 'volunteer') active @endif">
-                <a class="nav-link" href="{{ route('volunteer', null, false) }}">Volunteer</a>
+                <a class="nav-link" href="{{ route('volunteer') }}">Volunteer</a>
             </li>
 
             {{-- 

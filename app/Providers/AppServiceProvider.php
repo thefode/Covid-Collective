@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
         if (! is_dir(config('view.compiled'))) {
             mkdir(config('view.compiled'), 0755, true);
         }
+
+        URL::forceRootUrl(config('app.url'));
 
         Blade::directive('icon', function ($expression) {
             return <<<EOL
