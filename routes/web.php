@@ -1,5 +1,6 @@
 <?php
 
+use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Covid\Shared\CommandBus;
@@ -110,6 +111,12 @@ Route::get('/volunteer', function (Request $request) {
 
 
 Route::post('/volunteer', function (Request $request) {
+    DB::table('interests')->insert([
+        'id' => (string) Uuid::uuid4(),
+        'email' => $request->get('email'),
+        'created_at' => date('Y-m-d H:i:s')
+    ]);
+    
     Mail::to($request->get('email'))
         ->send(new VolunteerSignedUp($request->get('email')));
 
