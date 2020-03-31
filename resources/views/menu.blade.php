@@ -25,8 +25,8 @@
                 <a class="nav-link" href="{{ route('resources', null, false) }}">Resources</a>
             </li>
             
-            <li class="nav-item mr-lg-3 @if($current === 'other') active @endif">
-                <a class="nav-link" href="{{ route('other', null, false) }}">Other</a>
+            <li class="nav-item mr-lg-3 @if($current === 'volunteer') active @endif">
+                <a class="nav-link" href="{{ route('volunteer', null, false) }}">Volunteer</a>
             </li>
 
             {{-- 

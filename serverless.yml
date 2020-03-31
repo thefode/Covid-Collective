@@ -32,6 +32,8 @@ functions:
             APP_STORAGE: '/tmp'
             LOG_CHANNEL: 'stderr'
             VIEW_COMPILED_PATH: '/tmp/storage/framework/views'
+            AWS_ACCESS_KEY_ID: ${env:AWS_APP_KEY}
+            AWS_SECRET_ACCESS_KEY: ${env:AWS_APP_SECRET}
 
     artisan:
         handler: artisan
@@ -48,6 +50,8 @@ functions:
             APP_STORAGE: '/tmp'
             LOG_CHANNEL: 'stderr'
             VIEW_COMPILED_PATH: '/tmp/storage/framework/views'
+            AWS_ACCESS_KEY_ID: ${env:AWS_APP_KEY}
+            AWS_SECRET_ACCESS_KEY: ${env:AWS_APP_SECRET}
         events:
             # - schedule:
             #     rate: rate(5 minutes)

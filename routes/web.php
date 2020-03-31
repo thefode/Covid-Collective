@@ -14,10 +14,11 @@ use Covid\Resources\Domain\Audience;
 use Covid\Resources\Application\Query\ResourcesQuery;
 use Covid\Resources\Application\Commands\CreateResource;
 use Covid\Groups\Application\Groups;
+use App\Mail\VolunteerSignedUp;
 
 Route::get('/', function (Request $request) {
-    return view('soon');
-    // return view('home');
+    // return view('soon');
+    return view('home');
 })->name('home');
 
 /*
@@ -96,6 +97,24 @@ Route::get('/groups', function (Request $request, Groups $groups) {
         'groups' => $groups->getGroups()
     ]);
 })->name('groups');
+
+/*
+ *  Volunteer
+ */
+
+Route::get('/volunteer', function (Request $request) {
+    return view('volunteer', [
+        'thanks' => $request->get('thanks')
+    ]);
+})->name('volunteer');
+
+
+Route::post('/volunteer', function (Request $request) {
+    Mail::to($request->get('email'))
+        ->send(new VolunteerSignedUp($request->get('email')));
+
+    return redirect()->route('volunteer', ['thanks' => 1]);
+});
 
 /*
  *  Other

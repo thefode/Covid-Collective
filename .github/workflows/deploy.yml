@@ -71,6 +71,8 @@ jobs:
         DB_DATABASE: ${{ secrets.DB_DATABASE }}
         DB_USERNAME: ${{ secrets.DB_USERNAME }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        AWS_APP_KEY: ${{ secrets.AWS_APP_KEY }}
+        AWS_APP_SECRET: ${{ secrets.AWS_APP_SECRET }}
 
     - name: migrations
       run: vendor/bin/bref cli --region eu-west-1 CovidCollective-production-artisan -- migrate --force
