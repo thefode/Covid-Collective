@@ -2,6 +2,7 @@
 namespace Covid\Resources\Application\Query;
 
 use Illuminate\Database\Connection;
+use Covid\Resources\Domain\Url;
 use Covid\Resources\Domain\ResourceId;
 use Covid\Resources\Domain\Exceptions\ResourceNotFound;
 
@@ -15,11 +16,18 @@ class ResourcesQuery
         $this->db = $db;
     }
 
-    public function getResources(array $filter)
+    public function getResources(array $filter = []): array
     {
         $query = $this->db->table('resources');
 
         foreach ($filter as $field => $options) {
+            if ($field === 'url' && is_string($options)) {
+                $url = new Url($options);
+
+                $query->where('url', 'LIKE', "%{$url}%");
+                continue;
+            }
+
             $field = strtolower($field);
             if (!in_array($field, ['category', 'audience', 'cost', 'media'])) {
                 continue;

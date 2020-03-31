@@ -31,7 +31,7 @@ Route::get('/resources', function (Request $request, ResourcesQuery $resources) 
     ]);
 })->name('resources');
 
-Route::post('/resources/add', function (Request $request, CommandBus $bus) {
+Route::post('/resources/add', function (Request $request, CommandBus $bus, ResourcesQuery $resources) {
     $validator = Validator::make($request->all(), [
         'title' => 'required',
         'description' => 'required',
@@ -41,6 +41,13 @@ Route::post('/resources/add', function (Request $request, CommandBus $bus) {
         'cost' => 'required',
         'media' => 'required',
     ]);
+
+    // Check for existing resource
+    $existing = $resources->getResources(['url' => $request->get('url')]);
+    if (count($existing)) {
+        $data['error'] = 'Looks like this resource already exists!';
+        return view('addResource', $data);
+    }
     
     $data = $request->all();
     if ($validator->fails()) {
