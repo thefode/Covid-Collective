@@ -19,7 +19,7 @@
                     'groups' => 'Groups',
                     'resources' => 'Resources',
                     'volunteer' => 'Volunteer',
-                    'waysToHelp' => 'Ways to Help'
+                    'help' => 'Ways to Help'
                 ];
             @endphp
             @foreach($pages as $route => $title)

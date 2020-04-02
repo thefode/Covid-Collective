@@ -47,13 +47,13 @@
     <div class="container-fluid p-3 bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <p class="text-muted text-small text-small">
                         Covid Collective is voluntary organisation and it would be most uncool to sue us.<br>
                         Our content is accurate only to our best of our effort and is provided in good faith.
                     </p>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <p class="text-right text-muted text-small">
                     
                         <a href="{{ route('home') }}" class="text-reset">
@@ -70,6 +70,10 @@
                         &nbsp; | &nbsp;
                         <a href="{{ route('volunteer') }}" class="text-reset">
                             Volunteer
+                        </a>
+                        &nbsp; | &nbsp;
+                        <a href="{{ route('help') }}" class="text-reset">
+                            Help
                         </a>
                         
                     </p>

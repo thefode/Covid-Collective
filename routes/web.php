@@ -129,4 +129,4 @@ Route::post('/volunteer', function (Request $request) {
 
 Route::get('/ways-to-help', function (Request $request) {
     return view('help');
-})->name('waysToHelp');
+})->name('help');
