@@ -68,6 +68,7 @@
                     <option @if($category ?? null == 'Social')selected @endif>Social</option>
                     <option @if($category ?? null == 'Support')selected @endif>Support</option>
                     <option @if($category ?? null == 'Teaching')selected @endif>Teaching</option>
+                    <option @if($category ?? null == 'Volunteering')selected @endif>Volunteering</option>
                 </select>
             </div>
         </div>

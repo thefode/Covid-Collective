@@ -17,6 +17,7 @@ final class Category extends AttributeWithOptions
             'Social',
             'Support',
             'Teaching',
+            'Volunteering',
         ];
     }
 

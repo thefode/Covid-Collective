@@ -25,6 +25,7 @@
                                 'Social',
                                 'Support',
                                 'Teaching',
+                                'Volunteering',
                             ],
                             'Audience' => [
                                 'Anyone',
