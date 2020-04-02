@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Resources</h1>
+    {{-- <h1>Resources</h1> --}}
 
     <div class="row">
         <div class="col-sm-3 mb-3">

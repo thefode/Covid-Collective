@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-8">
                 
-        <h1>Volunteer</h1>
+        {{-- <h1>Volunteer</h1> --}}
 
         @if($thanks || false)
             <div class="alert alert-success" role="alert">

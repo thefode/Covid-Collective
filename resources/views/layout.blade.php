@@ -16,26 +16,66 @@
 
 </head>
 
-<body>
+<body class="bg-light">
 
-    <div class="container">
-        <div class="row pt-3">
-            <div class="col-sm">
-                <h1>Covid Collective</h1>
+    <div class="container-fluid bg-light">
+
+        <div class="container">
+            <div class="row pt-3">
+                <div class="col-sm">
+                    <h1>🌈 &nbsp; Covid Collective</h1>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    @include('menu')
+                </div>
             </div>
         </div>
 
-        <div class="row pt-3 pb-3 mb-3">
-            <div class="col">
-                @include('menu')
-            </div>
+    </div>
+
+    <div class="container-fluid py-5 bg-white">
+        <div class="container">
+            
+            @yield('content')
+
         </div>
     </div>
 
-    <div class="container">
-        
-        @yield('content')
-
+    <div class="container-fluid p-3 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <p class="text-muted text-small text-small">
+                        Covid Collective is voluntary organisation and it would be most uncool to sue us.<br>
+                        Our content is accurate only to our best of our effort and is provided in good faith.
+                    </p>
+                </div>
+                <div class="col-sm-4">
+                    <p class="text-right text-muted text-small">
+                    
+                        <a href="{{ route('home') }}" class="text-reset">
+                            Home
+                        </a>
+                        &nbsp; | &nbsp;
+                        <a href="{{ route('groups') }}" class="text-reset">
+                            Groups
+                        </a>
+                        &nbsp; | &nbsp;
+                        <a href="{{ route('resources') }}" class="text-reset">
+                            Resources
+                        </a>
+                        &nbsp; | &nbsp;
+                        <a href="{{ route('volunteer') }}" class="text-reset">
+                            Volunteer
+                        </a>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script src="https://kit.fontawesome.com/9856bcf32a.js" crossorigin="anonymous"></script>

@@ -2,7 +2,7 @@
     $current = Route::currentRouteName();
 @endphp
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light pl-0">
     {{-- <a class="navbar-brand" href="#">Navbar</a> --}}
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -11,24 +11,29 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mr-auto nav-pills">
 
-            <li class="nav-item mr-lg-3 @if($current === 'home') active @endif">
-                <a class="nav-link" href="{{ route('home') }}">Home</a>
-            </li>
-            
-            <li class="nav-item mr-lg-3 @if($current === 'groups') active @endif">
-                <a class="nav-link" href="{{ route('groups') }}">Support Groups</a>
-            </li>
-            
-            <li class="nav-item mr-lg-3 @if($current === 'resources') active @endif">
-                <a class="nav-link" href="{{ route('resources') }}">Resources</a>
-            </li>
-            
-            <li class="nav-item mr-lg-3 @if($current === 'volunteer') active @endif">
-                <a class="nav-link" href="{{ route('volunteer') }}">Volunteer</a>
-            </li>
+            @php
+                $pages = [
+                    'home' => 'Home',
+                    'groups' => 'Groups',
+                    'resources' => 'Resources',
+                    'volunteer' => 'Volunteer',
+                    'waysToHelp' => 'Ways to Help'
+                ];
+            @endphp
+            @foreach($pages as $route => $title)
 
+                <li class="nav-item mr-lg-3 @if($current === $route) active @endif">
+                    <a class="nav-link @if($current === $route) text-primary font-weight-bold @endif"
+                        href="{{ route($route) }}"
+                    >
+                        {{$title}}
+                    </a>
+                </li>
+
+            @endforeach
+            
             {{-- 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

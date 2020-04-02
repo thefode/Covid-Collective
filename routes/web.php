@@ -127,6 +127,6 @@ Route::post('/volunteer', function (Request $request) {
  *  Other
  */
 
-Route::get('/other', function (Request $request) {
-    return view('other');
-})->name('other');
+Route::get('/ways-to-help', function (Request $request) {
+    return view('help');
+})->name('waysToHelp');
