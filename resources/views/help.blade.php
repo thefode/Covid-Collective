@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-lg-8">
 
-        <p>There are loads of ways to do your part to help every out during this crisis.</p>
+        <p>There are loads of ways to do your part to help everyone out during this crisis.</p>
         
         <h4 class="mt-4">1. Follow the guidance</h4>
         <p>The most important thing to do is follow the governments guidance on how to reduce the spread and flatten the curve.</p>
